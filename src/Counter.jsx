@@ -19,8 +19,21 @@ export function Counter() {
         setCounter(0)
     }
 
+    // Function is called everytime increment button is clicked
+    const handleClick1 = () => {
+        // Counter state is incremented
+        setCounter(counter + 1)
+    }
+
+    // Function is called everytime decrement button is clicked
+    const handleClick2 = () => {
+        // Counter state is decremented
+        setCounter(counter - 1)
+    }
+
     function usePause() {
         // Pause Counter
+        // TODO display buttons increment and decrement onClick usePause
     }
 
     function useSart() {
@@ -36,6 +49,31 @@ export function Counter() {
             <div>
                 <button>Pause</button>
                 <button>Start</button>
+            </div>
+
+            {/*TODO don't show buttons when de counter is running auto*/}
+            {/*TODO display buttons increment and decrement onClick usePause*/}
+            <div className="buttons">
+                <button style={{
+                            fontSize: '60%',
+                            position: 'relative',
+                            top: '20vh',
+                            marginRight: '5px',
+                            backgroundColor: 'green',
+                            borderRadius: '8%',
+                            color: 'white',
+                        }}
+                        onClick={handleClick1}>Increment</button>
+                <button style={{
+                            fontSize: '60%',
+                            position: 'relative',
+                            top: '20vh',
+                            marginLeft: '5px',
+                            backgroundColor: 'red',
+                            borderRadius: '8%',
+                            color: 'white',
+                        }}
+                        onClick={handleClick2}>Decrement</button>
             </div>
         </>
     )
