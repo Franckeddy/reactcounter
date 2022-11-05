@@ -1,17 +1,10 @@
-version: 2.1
-
+version: '2.1'
 orbs:
-  codecov: codecov/codecov@3.0.0
-
-jobs:
-  example-job:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - codecov/upload:
-          token: CODECOV_TOKEN=34bab12a-47a2-4563-adc8-868d3aa6a495
-
+  codecov: codecov/codecov@3.2.3
+  node: circleci/node@4.7.0
 workflows:
-  example-workflow:
+  upload-to-codecov:
     jobs:
-      - example-job
+      - node/test:
+          post-steps:
+            - codecov/upload
