@@ -37,3 +37,10 @@ jobs:
     steps:
       - codecov/upload:
           token: 34bab12a-47a2-4563-adc8-868d3aa6a495
+          env:
+            CODECOV_TOKEN: ${{34bab12a-47a2-4563-adc8-868d3aa6a495}}
+          run: |
+            curl -Os https://uploader.codecov.io/latest/linux/codecov
+            find . -iregex "codecov.*"
+            chmod +x codecov 
+            ./codecov -t ${34bab12a-47a2-4563-adc8-868d3aa6a495}
