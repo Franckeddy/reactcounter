@@ -4,6 +4,6 @@ orbs:
 workflows:
   upload-to-codecov:
     jobs:
-      - codecov/upload
+      - codecov
     token: 34bab12a-47a2-4563-adc8-868d3aa6a495
 
