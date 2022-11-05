@@ -15,7 +15,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:ci": "react-scripts test --ci --coverage --reporters=default --reporters=jest-junit"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/__stories__/",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "jest-junit"
+    ]
   },
   "eslintConfig": {
     "extends": [
