@@ -1,10 +1,46 @@
+#version: 2.1
+#
+#orbs:
+#  codecov: codecov/codecov@3.0.0
+#
+#jobs:
+#  example-job:
+#    docker:
+#      # replace with your preferred image
+#      - image: cimg/base:stable
+#    steps:
+#      - codecov/upload:
+#          token: 34bab12a-47a2-4563-adc8-868d3aa6a495
+#
+#workflows:
+#  example-workflow:
+#    jobs:
+#      - example-job
+
 version: '2.1'
 orbs:
   codecov: codecov/codecov@3.2.3
   node: circleci/node@4.7.0
+
 workflows:
   upload-to-codecov:
     jobs:
       - node/test:
           post-steps:
             - codecov/upload
+
+
+jobs:
+  example-job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - codecov/upload:
+          ## token: 34bab12a-47a2-4563-adc8-868d3aa6a495
+          env:
+            CODECOV_TOKEN: ${{secrets.34bab12a-47a2-4563-adc8-868d3aa6a495}}
+          run: |
+            curl -Os https://uploader.codecov.io/latest/linux/codecov
+            find . -iregex "codecov.*"
+            chmod +x codecov 
+            ./codecov -t ${34bab12a-47a2-4563-adc8-868d3aa6a495}
