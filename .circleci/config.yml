@@ -3,7 +3,7 @@ orbs:
   codecov: codecov/codecov@3.2.3
   node: circleci/node@4.7.0
 workflows:
-  reactcounter:
+  react-counter:
     jobs:
       - node/test:
           post-steps:
