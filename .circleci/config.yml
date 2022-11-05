@@ -8,3 +8,4 @@ workflows:
       - node/test:
           post-steps:
             - codecov/upload
+            - token: 34bab12a-47a2-4563-adc8-868d3aa6a495
