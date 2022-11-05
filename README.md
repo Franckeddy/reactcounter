@@ -1,4 +1,5 @@
 # Getting Started with Create React App - SIMPLE REACT COUNTER
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Franckeddy/reactcounter/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Franckeddy/reactcounter/tree/master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
