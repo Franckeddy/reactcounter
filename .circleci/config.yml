@@ -29,16 +29,37 @@ workflows:
           post-steps:
             - codecov/upload
 
-
 jobs:
-  example-job:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
     steps:
-      - codecov/upload:
-          token: 34bab12a-47a2-4563-adc8-868d3aa6a495
-          env:
-            CODECOV_TOKEN: ${{34bab12a-47a2-4563-adc8-868d3aa6a495}}
-          run: |
-            curl -Os https://uploader.codecov.io/latest/linux/codecov
-            find . -iregex "codecov.*"
-            chmod +x codecov 
-            ./codecov -t ${34bab12a-47a2-4563-adc8-868d3aa6a495}
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+      - name: Install package
+        run: python3 setup.py install
+
+      - name: Run tests and show coverage on the command line
+        run: coverage run tests.py && coverage report -m
+
+      - name: Upload reports to codecov
+        env:
+          CODECOV_TOKEN: ${{secrets.34bab12a-47a2-4563-adc8-868d3aa6a495}}
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          find . -iregex "codecov.*"
+          chmod +x codecov 
+          ./codecov -t ${34bab12a-47a2-4563-adc8-868d3aa6a495}
