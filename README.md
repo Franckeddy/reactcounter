@@ -1,6 +1,8 @@
 # Create React App - SIMPLE REACT COUNTER
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Franckeddy/reactcounter/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Franckeddy/reactcounter/tree/master)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6823f1d8828a483a97cfd7f5624284b3)](https://www.codacy.com/gh/Franckeddy/reactcounter/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Franckeddy/reactcounter&amp;utm_campaign=Badge_Grade)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Franckeddy/reactcounter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Franckeddy/reactcounter/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/Franckeddy/reactcounter/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Franckeddy/reactcounter/build-status/master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
