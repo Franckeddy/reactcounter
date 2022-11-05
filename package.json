@@ -14,9 +14,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
+    "test:cov": "yarn test -- --coverage",
+    "test:ci": "react-scripts test --env=jsdom --reporters=jest-junit ./node_modules/jest-junit --coverage ",
     "eject": "react-scripts eject",
-    "test:ci": "react-scripts test --ci --coverage --reporters=default --reporters=jest-junit"
+    "lint": "eslint src",
+    "dev": "node server & react-scripts start"
   },
   "jest": {
     "collectCoverageFrom": [
