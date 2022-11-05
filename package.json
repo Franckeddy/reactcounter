@@ -19,8 +19,15 @@
     "test:ci": "react-scripts test --ci --coverage --reporters=default --reporters=jest-junit"
   },
   "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/__stories__/",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "jest-junit"
+    ]
   },
   "eslintConfig": {
     "extends": [
