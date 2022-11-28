@@ -20,13 +20,13 @@ export function Counter() {
     }
 
     // Function is called everytime increment button is clicked
-    const handleClick1 = () => {
+    const increment = () => {
         // Counter state is incremented
         setCounter(counter + 1)
     }
 
     // Function is called everytime decrement button is clicked
-    const handleClick2 = () => {
+    const decrement = () => {
         // Counter state is decremented
         setCounter(counter - 1)
     }
@@ -63,7 +63,7 @@ export function Counter() {
                             borderRadius: '8%',
                             color: 'white',
                         }}
-                        onClick={handleClick1}>Increment</button>
+                        onClick={increment}>Increment</button>
                 <button style={{
                             fontSize: '60%',
                             position: 'relative',
@@ -73,7 +73,7 @@ export function Counter() {
                             borderRadius: '8%',
                             color: 'white',
                         }}
-                        onClick={handleClick2}>Decrement</button>
+                        onClick={decrement}>Decrement</button>
             </div>
         </>
     )
